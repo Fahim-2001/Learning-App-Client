@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -7,38 +8,38 @@ const Header = () => {
         <div class="relative flex items-center justify-between lg:justify-center lg:space-x-16">
           <ul class="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/courses"
                 aria-label="Our product"
                 title="Our product"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Product
-              </a>
+                Courses
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/faq"
                 aria-label="Our product"
                 title="Our product"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Features
-              </a>
+                FAQ
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/blog"
                 aria-label="Product pricing"
                 title="Product pricing"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Pricing
-              </a>
+                Blog
+              </Link>
             </li>
           </ul>
-          <a
-            href="/"
+          <Link
+            to="/"
             aria-label="Company"
             title="Company"
             class="inline-flex items-center"
@@ -61,37 +62,27 @@ const Header = () => {
             <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
               Company
             </span>
-          </a>
+          </Link>
           <ul class="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
-                href="/"
-                aria-label="About us"
-                title="About us"
-                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                About us
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
+              <Link
+                to="/login"
                 aria-label="Sign in"
                 title="Sign in"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Sign in
-              </a>
+                Log In
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/register"
                 aria-label="Sign up"
                 title="Sign up"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Sign up
-              </a>
+                Register
+              </Link>
             </li>
           </ul>
           <div class="lg:hidden">

@@ -42,7 +42,13 @@ const Header = () => {
         </div>
         {/* Site name */}
         <Link to="/courses" className="btn btn-ghost normal-case text-xl">
-          daisyUI
+          <p className="text-2xl">
+            <span className="text-green-800">71</span>
+            {"  "}
+            <span className="text-red-800">Tech</span>
+            {"  "}
+            <span className="text-green-800">Hub</span>
+          </p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex ">

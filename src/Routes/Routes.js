@@ -19,7 +19,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses",
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://y-five-ebon.vercel.app/courses"),
         element: <Courses></Courses>,
       },
       {

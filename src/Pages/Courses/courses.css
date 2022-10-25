@@ -1,0 +1,5 @@
+.courses-container {
+  display: grid;
+  grid-template-columns: 3.5fr 1.5fr;
+  margin-top: 15px;
+}

@@ -5,10 +5,30 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
   //Contexts
-  const { signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+  const { signInWithGoogle, signInWithGithub, signIn } =
+    useContext(AuthContext);
   // Providers
   const googleProvider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider();
+
+  //Log In
+  const logIn = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.email.value;
+
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   //Google Sign In
   const googleLogin = () => {
@@ -40,7 +60,7 @@ const Login = () => {
         Login
       </h2>
 
-      <form>
+      <form onSubmit={logIn}>
         <div className="grid grid-cols-1 gap-6 mt-4 ">
           <div>
             <label

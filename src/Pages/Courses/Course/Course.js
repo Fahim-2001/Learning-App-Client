@@ -1,7 +1,7 @@
 import React from "react";
 
 const Course = ({ course }) => {
-  const { id, course_name, image, course_duration } = course;
+  const { course_name, image, course_duration } = course;
   return (
     <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
       <img

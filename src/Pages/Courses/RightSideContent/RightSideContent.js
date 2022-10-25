@@ -3,7 +3,7 @@ import React from "react";
 const RightSideContent = () => {
   return (
     <div>
-      <h1>Right Side Content</h1>
+      <h1>Here we have categories courses.</h1>
     </div>
   );
 };

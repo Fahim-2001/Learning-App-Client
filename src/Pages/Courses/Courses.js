@@ -9,11 +9,7 @@ const Courses = () => {
   console.log(allCourses);
   return (
     <div className="courses-container">
-      <div className="grid sm:grid-cols-3 ">
-        {allCourses.map((course) => (
-          <Course key={course.id} course={course}></Course>
-        ))}
-      </div>
+      <div className="grid sm:grid-cols-3 "></div>
       <RightSideContent></RightSideContent>
     </div>
   );

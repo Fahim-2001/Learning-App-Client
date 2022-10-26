@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import logo from "../../../images/company-logo.png";
 
 const Header = () => {
   // Auth Context
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+
   // Logout function
   const handleLogOut = () => {
     logOut()
@@ -53,8 +55,9 @@ const Header = () => {
           </ul>
         </div>
         {/* Site name */}
-        <Link to="/courses" className="btn btn-ghost normal-case text-xl">
-          <p className="text-2xl">
+        <Link to="/courses" className="text-xl flex ">
+          <img src={logo} height={"50px"} width={"50px"} alt="" />
+          <p className="text-2xl mt-3">
             <span className="text-green-800">71</span>
             {"  "}
             <span className="text-red-800">Tech</span>

@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../../Firebase/firebase.config";
 
@@ -60,6 +61,18 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  // Update profile
+  const updateUserProfile = (name, photoURL) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photoURL,
+    })
+      .then(() => {
+        console.log("Profile updated!");
+      })
+      .catch((error) => console.error(error));
+  };
+
   const authInfo = {
     user,
     createUser,
@@ -68,6 +81,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     verifyEmail,
+    updateUserProfile,
   };
   return (
     <div>

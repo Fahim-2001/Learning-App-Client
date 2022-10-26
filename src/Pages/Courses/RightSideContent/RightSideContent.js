@@ -6,7 +6,7 @@ const RightSideContent = ({ allCourses }) => {
   return (
     <div>
       <h1 className="text-2xl font-medium">
-        Here we have {allCourses.length} courses.
+        Here we have {allCourses?.length} courses.
       </h1>
       <div className="grid grid-cols-1 my-2">
         {allCourses?.map((course) => (

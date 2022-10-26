@@ -42,6 +42,9 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
               <Link to="/courses">Courses</Link>
             </li>
             <li tabIndex={0}>
@@ -55,7 +58,7 @@ const Header = () => {
           </ul>
         </div>
         {/* Site name */}
-        <Link to="/courses" className="text-xl flex ">
+        <Link to="/courses" className="text-xl lg:flex ">
           <img src={logo} height={"50px"} width={"50px"} alt="" />
           <p className="text-2xl mt-3">
             <span className="text-green-800">71</span>
@@ -67,7 +70,10 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex ">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="menu menu-horizontal p-0 font-medium">
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
           <li>
             <Link to="/courses">Courses</Link>
           </li>
@@ -82,6 +88,12 @@ const Header = () => {
       <div className="navbar-end">
         {user && user?.uid ? (
           <>
+            <img
+              src={user?.photoURL}
+              alt=""
+              style={{ height: "30px", marginRight: "10px" }}
+              title={user?.displayName}
+            />
             <Link className="btn mr-2" onClick={handleLogOut}>
               Log Out
             </Link>

@@ -1,11 +1,13 @@
 import { updateProfile } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
   // Error State
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   // Contexts
   const { createUser, verifyEmail, updateUserProfile } =
@@ -36,6 +38,7 @@ const Register = () => {
         verifyEmail();
         form.reset();
         setError("");
+        navigate("/courses");
       })
       .catch((error) => {
         console.error(error);

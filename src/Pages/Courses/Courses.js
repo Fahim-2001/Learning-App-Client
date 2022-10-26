@@ -7,7 +7,7 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Courses = () => {
   const allCourses = useLoaderData();
-  console.log(allCourses);
+  // console.log(allCourses);
 
   const { user } = useContext(AuthContext);
   console.log(user);

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const RightSideContent = ({ allCourses }) => {
-  console.log(allCourses);
+  // console.log(allCourses);
   return (
     <div>
       <h1 className="text-2xl font-medium">

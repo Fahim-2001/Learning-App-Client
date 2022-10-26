@@ -7,7 +7,7 @@ const Register = () => {
   const [error, setError] = useState(null);
 
   // Contexts
-  const { createUser } = useContext(AuthContext);
+  const { createUser, verifyEmail } = useContext(AuthContext);
 
   //Create User
   const handleRegister = (event) => {
@@ -29,7 +29,9 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+
         console.log(user);
+        verifyEmail();
         form.reset();
         setError("");
       })

@@ -7,14 +7,14 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Courses = () => {
   const allCourses = useLoaderData();
-  // console.log(allCourses);
+  console.log(allCourses);
 
   const { user } = useContext(AuthContext);
   console.log(user);
   return (
     <div className="courses-container">
       <div className="grid sm:grid-cols-3 ">
-        {allCourses.map((course) => (
+        {allCourses?.map((course) => (
           <Course key={course.id} course={course}></Course>
         ))}
       </div>

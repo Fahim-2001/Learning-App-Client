@@ -3,7 +3,6 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
-  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -17,12 +16,14 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(true);
 
   // Observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("Use state changed", currentUser);
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -31,11 +32,13 @@ const AuthProvider = ({ children }) => {
 
   // Create User with Email and Password
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // Sign In With Email and Password
   const signIn = (email, password) => {
+    setLoading(true);
     signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -51,14 +54,8 @@ const AuthProvider = ({ children }) => {
 
   // Log Out
   const logOut = () => {
+    setLoading(true);
     signOut(auth);
-  };
-
-  // Verify Email Message
-  const verifyEmail = () => {
-    sendEmailVerification(auth.currentUser).then(() => {
-      alert("Please check your verification mail!");
-    });
   };
 
   // Update profile
@@ -75,12 +72,12 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loading,
     createUser,
     signInWithGoogle,
     signInWithGithub,
     signIn,
     logOut,
-    verifyEmail,
     updateUserProfile,
   };
   return (

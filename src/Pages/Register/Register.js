@@ -1,4 +1,3 @@
-import { updateProfile } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
@@ -25,7 +24,7 @@ const Register = () => {
 
     // Password Confirming
     if (password !== confirmedPassword) {
-      return setError("Password doesnt match!");
+      return setError("Password doesn't match!");
     }
     console.log(fullname, photoURL, email, password, confirmedPassword);
 
@@ -35,7 +34,6 @@ const Register = () => {
         const user = result.user;
         updateUserProfile(fullname, photoURL);
         console.log(user);
-        verifyEmail();
         form.reset();
         setError("");
         navigate("/courses");

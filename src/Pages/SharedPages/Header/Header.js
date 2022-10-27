@@ -86,6 +86,9 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <span className="mr-2">Light</span>
+        <input type="checkbox" className="toggle mr-1" />
+        <span className="mr-3">Dark</span>
         {user && user?.uid ? (
           <>
             <img

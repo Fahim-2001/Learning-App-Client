@@ -9,8 +9,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   // Contexts
-  const { createUser, verifyEmail, updateUserProfile } =
-    useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   //Create User
   const handleRegister = (event) => {
